@@ -15,7 +15,6 @@ Proyek ini dibangun untuk memenuhi seluruh kriteria dan spesifikasi teknis penug
 6. [Integrasi REST API (Tenrai API)](#-integrasi-rest-api-tenrai-api)
 7. [Struktur Direktori Proyek](#-struktur-direktori-proyek)
 8. [Panduan Menjalankan Aplikasi](#-panduan-menjalankan-aplikasi)
-9. [Naskah Panduan Video Penjelasan Kode](#-naskah-panduan-video-penjelasan-kode)
 
 ---
 
@@ -257,58 +256,6 @@ app/src/main/java/com/pemmob/eksplorasianime/
    ```bash
    ./gradlew testDebugUnitTest
    ```
-
----
-
-## 🎬 Naskah Panduan Video Penjelasan Kode
-
-> **PENTING SESUAI PETUNJUK TUGAS**:
-> Video yang diminta adalah **penjelasan kodenya (walkthrough code)**, bukan demo penggunaan aplikasi.
-> Gunakan naskah berdurasi ~3–5 menit di bawah ini saat merekam layar IDE Anda:
-
-### Bagian 1: Pembukaan & Gambaran Umum (00:00 - 00:45)
-> *"Halo semuanya, pada kesempatan kali ini saya akan mempresentasikan penjelasan kode dari **Aplikasi Eksplorasi Anime** yang telah saya bangun menggunakan bahasa pemrograman **Kotlin**, **Jetpack Compose**, **Material Design 3**, dan arsitektur **MVVM (Model-View-ViewModel-Repository)**.*
->
-> *Aplikasi ini terhubung langsung ke REST API dari **Tenrai API** secara dinamis untuk mengambil katalog anime, menampilkan daftar anime dengan **LazyColumn**, serta menyediakan rincian detail saat salah satu judul dipilih dengan navigasi maksimal 2 screen."*
-
-### Bagian 2: Arsitektur MVVM & Model Data (00:45 - 01:45)
-> *(Buka file `data/model/Anime.kt` dan `data/repository/AnimeRepositoryImpl.kt`)*
->
-> *"Pertama, di layer Model, saya membuat data class `Anime.kt`. Di sini saya memaksimalkan fitur unggulan Kotlin:
-> 1. **Data Class**: untuk merepresentasikan objek respons dari Tenrai API dengan anotasi `@SerializedName`.
-> 2. **Null Safety**: Menggunakan elvis operator `?:` dan safe-call `?.` seperti pada properti `displayTitle`, `displayScore`, dan `displayYear` untuk memastikan aplikasi tidak mengalami crash akibat nilai null dari API.
-> 3. **Collection & Lambda**: Menggunakan fungsi `.map()`, `.filter()`, dan `.joinToString()` untuk memformat daftar genre dan nama studio animasi secara deklaratif.*
->
-> *Di layer Repository (`AnimeRepositoryImpl.kt`), saya menggunakan Coroutines dengan `withContext(Dispatchers.IO)` dan Retrofit untuk memanggil endpoint `/v1/anime` dan `/v1/anime/{id}` secara asynchronous, membungkus hasilnya ke dalam tipe `Result<T>`."*
-
-### Bagian 3: ViewModel & State Management (01:45 - 02:45)
-> *(Buka file `ui/state/UiState.kt` dan `ui/viewmodel/AnimeViewModel.kt`)*
->
-> *"Kedua, pada layer ViewModel dan State:
-> Sesuai ketentuan, aplikasi wajib menerapkan state UI minimal **Loading**, **Data (Success)**, dan **Error**. Saya mendefinisikannya di `UiState.kt` sebagai `sealed interface`.
->
-> Di dalam `AnimeViewModel.kt`, saya menyediakan `MutableStateFlow` yang diekspos sebagai `StateFlow` read-only untuk mematuhi prinsip Unidirectional Data Flow. ViewModel mengeksekusi pengambilan data via `viewModelScope.launch`, memperbarui state menjadi `Loading`, lalu mengubahnya menjadi `Success` saat data berhasil didapat, atau `Error` jika terjadi kegagalan jaringan."*
-
-### Bagian 4: View Layer, Jetpack Compose, & Navigasi (02:45 - 03:45)
-> *(Buka file `ui/navigation/AppNavigation.kt`, `ui/screens/HomeScreen.kt`, dan `ui/screens/DetailScreen.kt`)*
->
-> *"Ketiga, pada layer View:
-> Seluruh antarmuka 100% menggunakan **Jetpack Compose** tanpa satu pun XML layout.
->
-> Pada `AppNavigation.kt`, saya mengonfigurasi `NavHost` dengan 2 rute layar: `HomeScreen` dan `DetailScreen`. Parameter ID anime dikirimkan secara aman melalui rute navigasi `detail/{animeId}`.
->
-> Di `HomeScreen.kt`, saya menggunakan `LazyColumn` untuk merender kumpulan kartu anime berkinerja tinggi. Kartu anime (`AnimeCard.kt`) menampilkan seluruh data wajib: **Judul anime**, **Rating (skor & batas usia)**, **Tahun rilis**, dan **Jumlah episode**. Selain itu terdapat kolom pencarian dinamis yang langsung memfilter data dari API.
->
-> Di `DetailScreen.kt`, data anime ditampilkan secara komprehensif mulai dari info produksi, chip genre menggunakan Material 3 `AssistChip`, hingga sinopsis cerita lengkap."*
-
-### Bagian 5: Tema Kustom & Penutup (03:45 - 04:15)
-> *(Buka file `ui/theme/Theme.kt` dan `ui/theme/Type.kt`)*
->
-> *"Terakhir, untuk tampilan antarmuka, saya membuat **Custom Theme** dan **Custom Typography** di `Theme.kt` dan `Type.kt` yang mendukung mode Terang dan Gelap, mengacu pada pedoman Material Design 3.
->
-> Seluruh kode telah diuji melalui unit test di `AnimeModelTest.kt` dan berhasil terkompilasi dengan sukses menjadi file APK debug.*
->
-> *Sekian penjelasan kode dari Aplikasi Eksplorasi Anime ini. Terima kasih!"*
 
 ---
 
