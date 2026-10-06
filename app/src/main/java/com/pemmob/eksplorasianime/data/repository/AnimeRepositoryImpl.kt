@@ -6,10 +6,6 @@ import com.pemmob.eksplorasianime.data.remote.RetrofitClient
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-/**
- * Implementasi konkret dari AnimeRepository.
- * Mengambil data dari REST API Tenrai menggunakan Retrofit.
- */
 class AnimeRepositoryImpl(
     private val apiService: ApiService = RetrofitClient.apiService
 ) : AnimeRepository {

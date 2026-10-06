@@ -18,9 +18,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 
-/**
- * Komponen Badge bergaya pill untuk menampilkan data ringkas anime (rating, tahun, episode).
- */
 @Composable
 fun InfoBadge(
     text: String,

@@ -45,11 +45,6 @@ import com.pemmob.eksplorasianime.ui.components.LoadingView
 import com.pemmob.eksplorasianime.ui.state.UiState
 import com.pemmob.eksplorasianime.ui.viewmodel.AnimeViewModel
 
-/**
- * Screen 1: Home Screen.
- * Menampilkan daftar anime menggunakan LazyColumn.
- * Menangani state: Loading, Error, dan Data (Success).
- */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
@@ -151,7 +146,7 @@ fun HomeScreen(
                     if (animeList.isEmpty()) {
                         EmptyListState()
                     } else {
-                        // Implementasi LazyColumn sesuai persyaratan Teknis 2.c
+                        // Implementasi LazyColumn
                         LazyColumn(
                             modifier = Modifier.fillMaxSize(),
                             contentPadding = PaddingValues(16.dp),

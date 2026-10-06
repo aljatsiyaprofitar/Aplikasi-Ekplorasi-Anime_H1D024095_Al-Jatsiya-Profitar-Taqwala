@@ -58,11 +58,6 @@ import com.pemmob.eksplorasianime.ui.state.UiState
 import com.pemmob.eksplorasianime.ui.theme.GoldStar
 import com.pemmob.eksplorasianime.ui.viewmodel.AnimeViewModel
 
-/**
- * Screen 2: Anime Detail Screen.
- * Menampilkan rincian detail anime yang dipilih dari daftar.
- * Menangani state: Loading, Error, dan Data (Success).
- */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DetailScreen(

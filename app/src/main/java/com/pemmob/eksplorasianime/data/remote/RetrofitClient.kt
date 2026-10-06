@@ -3,9 +3,6 @@ package com.pemmob.eksplorasianime.data.remote
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-/**
- * Singleton object untuk menyediakan instance Retrofit dan ApiService.
- */
 object RetrofitClient {
 
     private const val BASE_URL = "https://api.tenrai.org/v1/"

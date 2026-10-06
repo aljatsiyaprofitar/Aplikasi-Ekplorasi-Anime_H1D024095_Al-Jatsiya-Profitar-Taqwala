@@ -36,14 +36,6 @@ import androidx.compose.ui.unit.dp
 import com.pemmob.eksplorasianime.data.model.Anime
 import com.pemmob.eksplorasianime.ui.theme.GoldStar
 
-/**
- * Komponen Card untuk item anime pada LazyColumn.
- * Menampilkan minimal 4 data wajib:
- * 1. Judul anime
- * 2. Rating (Score / Age Rating)
- * 3. Tahun rilis
- * 4. Jumlah episode
- */
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun AnimeCard(
@@ -68,7 +60,7 @@ fun AnimeCard(
                 .padding(16.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            // Avatar/Badge Visual (tanpa perlu download gambar sesuai aturan 3.4)
+            // Avatar/Badge Visual
             Box(
                 modifier = Modifier
                     .size(54.dp)
@@ -110,7 +102,7 @@ fun AnimeCard(
 
                 Spacer(modifier = Modifier.height(6.dp))
 
-                // Baris Badge: 2. Rating (Score), 3. Tahun Rilis, 4. Jumlah Episode (Wajib)
+                // Baris Badge: 2. Rating (Score), 3. Tahun Rilis, 4. Jumlah Episode
                 FlowRow(
                     horizontalArrangement = Arrangement.spacedBy(6.dp),
                     verticalArrangement = Arrangement.spacedBy(6.dp)
@@ -139,7 +131,7 @@ fun AnimeCard(
                         contentColor = MaterialTheme.colorScheme.onSurfaceVariant
                     )
 
-                    // Batas Usia / Rating Usia jika ada
+                    // Batas Usia / Rating Usia
                     anime.rating?.let { ageRating ->
                         val shortRating = ageRating.split("-").firstOrNull()?.trim() ?: ageRating
                         InfoBadge(

@@ -53,9 +53,6 @@ private val LightColorScheme = lightColorScheme(
     onSurfaceVariant = OnSurfaceVariantLight
 )
 
-/**
- * Custom Theme Jetpack Compose Material 3 untuk Aplikasi Eksplorasi Anime.
- */
 @Composable
 fun AplikasiEksplorasiAnimeTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),

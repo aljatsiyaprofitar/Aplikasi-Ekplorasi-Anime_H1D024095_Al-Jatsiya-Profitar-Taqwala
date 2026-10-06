@@ -6,10 +6,6 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-/**
- * Custom Typography khusus Aplikasi Eksplorasi Anime.
- * Memenuhi kriteria teknis "Custom Typography" pada Material Design 3.
- */
 val AppTypography = Typography(
     displayLarge = TextStyle(
         fontFamily = FontFamily.SansSerif,

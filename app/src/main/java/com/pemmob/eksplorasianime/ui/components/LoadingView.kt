@@ -15,10 +15,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
-/**
- * Komponen UI untuk menampilkan indikator Loading.
- * Memenuhi kriteria state: "Loading".
- */
 @Composable
 fun LoadingView(
     modifier: Modifier = Modifier,

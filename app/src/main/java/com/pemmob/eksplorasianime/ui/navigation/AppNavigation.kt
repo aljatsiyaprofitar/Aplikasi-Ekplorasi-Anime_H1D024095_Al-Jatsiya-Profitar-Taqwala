@@ -12,10 +12,6 @@ import com.pemmob.eksplorasianime.ui.screens.DetailScreen
 import com.pemmob.eksplorasianime.ui.screens.HomeScreen
 import com.pemmob.eksplorasianime.ui.viewmodel.AnimeViewModel
 
-/**
- * Pengaturan NavHost Jetpack Compose.
- * Menghubungkan Home Screen dan Detail Screen secara deklaratif.
- */
 @Composable
 fun AppNavigation(
     navController: NavHostController = rememberNavController(),

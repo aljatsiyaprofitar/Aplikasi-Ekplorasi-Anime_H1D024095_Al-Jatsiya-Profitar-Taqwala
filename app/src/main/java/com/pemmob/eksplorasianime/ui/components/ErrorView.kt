@@ -22,10 +22,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 
-/**
- * Komponen UI untuk menampilkan pesan Error dan tombol Retry.
- * Memenuhi kriteria state: "Error".
- */
 @Composable
 fun ErrorView(
     message: String,
