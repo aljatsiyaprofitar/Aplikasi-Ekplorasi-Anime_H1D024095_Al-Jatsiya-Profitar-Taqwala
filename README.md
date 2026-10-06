@@ -51,6 +51,8 @@ Aplikasi terdiri dari **2 layar utama** yang saling terhubung:
   - Jumlah Episode (🎬 Episodes)
   - Rating Batas Usia (🛡️ Age Rating, misal: PG-13, R-17+)
   - Indikator Navigasi ke Detail
+<img width="720" height="1600" alt="image" src="https://github.com/user-attachments/assets/437af62f-a3a3-4450-8c0c-427d9508a5bc" />
+
 
 ### 2. Anime Detail Screen (Rincian Anime)
 - **TopAppBar** dengan tombol kembali (*Back Navigation*).
@@ -58,6 +60,8 @@ Aplikasi terdiri dari **2 layar utama** yang saling terhubung:
 - **Informasi Produksi**: Tipe anime (TV/Movie), status penayangan, durasi per episode, dan studio animasi.
 - **Genre Chips**: Tag kategori genre interaktif menggunakan Material 3 `AssistChip`.
 - **Sinopsis Cerita**: Uraian sinopsis cerita lengkap dengan tipografi yang nyaman dibaca.
+<img width="720" height="1600" alt="image" src="https://github.com/user-attachments/assets/0588cc9f-7f6b-40b3-a6f6-c83b879b6471" />
+
 
 ---
 
