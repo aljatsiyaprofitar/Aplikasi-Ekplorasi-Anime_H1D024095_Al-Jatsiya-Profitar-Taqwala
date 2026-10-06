@@ -174,3 +174,29 @@ fun AnimeCard(
         }
     }
 }
+
+@androidx.compose.ui.tooling.preview.Preview(showBackground = true, name = "Light Mode")
+@androidx.compose.ui.tooling.preview.Preview(
+    showBackground = true,
+    uiMode = android.content.res.Configuration.UI_MODE_NIGHT_YES,
+    name = "Dark Mode"
+)
+@Composable
+private fun AnimeCardPreview() {
+    com.pemmob.eksplorasianime.ui.theme.AplikasiEksplorasiAnimeTheme {
+        AnimeCard(
+            anime = Anime(
+                malId = 1,
+                title = "Cowboy Bebop",
+                titleEnglish = "Cowboy Bebop",
+                score = 8.75,
+                rating = "R - 17+ (violence & profanity)",
+                year = 1998,
+                episodes = 26,
+                type = "TV"
+            ),
+            onClick = {},
+            modifier = Modifier.padding(16.dp)
+        )
+    }
+}

@@ -343,3 +343,37 @@ private fun InfoRow(
         )
     }
 }
+
+@androidx.compose.ui.tooling.preview.Preview(showBackground = true, name = "Detail Light")
+@androidx.compose.ui.tooling.preview.Preview(
+    showBackground = true,
+    uiMode = android.content.res.Configuration.UI_MODE_NIGHT_YES,
+    name = "Detail Dark"
+)
+@Composable
+private fun AnimeDetailPreview() {
+    com.pemmob.eksplorasianime.ui.theme.AplikasiEksplorasiAnimeTheme {
+        AnimeDetailContent(
+            anime = Anime(
+                malId = 1,
+                title = "Cowboy Bebop",
+                titleJapanese = "カウボーイビバップ",
+                score = 8.75,
+                rating = "R - 17+ (violence & profanity)",
+                year = 1998,
+                episodes = 26,
+                type = "TV",
+                status = "Finished Airing",
+                duration = "24 min per ep",
+                synopsis = "Crime is timeless. In the year 2071, Spike Spiegel and Jet Black pursue bounties across space aboard the Bebop...",
+                genres = listOf(
+                    com.pemmob.eksplorasianime.data.model.Genre(name = "Action"),
+                    com.pemmob.eksplorasianime.data.model.Genre(name = "Sci-Fi")
+                ),
+                studios = listOf(
+                    com.pemmob.eksplorasianime.data.model.Studio(name = "Sunrise")
+                )
+            )
+        )
+    }
+}
